@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Re-highlight syntax
         document.querySelectorAll('pre code').forEach((el) => {
-            hljs.highlightElement(el);
+            Prism.highlightElement(el);
         });
     }
 
