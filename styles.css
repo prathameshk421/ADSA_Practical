@@ -324,3 +324,41 @@ footer {
         height: 300px;
     }
 }
+
+/* Complexity Table */
+.table-responsive {
+    overflow-x: auto;
+    border-radius: 12px;
+    border: 1px solid var(--card-border);
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.complexity-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.complexity-table th,
+.complexity-table td {
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.complexity-table th {
+    background: rgba(255, 255, 255, 0.05);
+    font-family: var(--font-main);
+    font-weight: 600;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+}
+
+.complexity-table tr:last-child td {
+    border-bottom: none;
+}
+
+.complexity-table tr:hover td {
+    background: rgba(255, 255, 255, 0.02);
+}
