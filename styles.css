@@ -250,6 +250,7 @@ pre {
     padding: 1.5rem !important;
     max-height: 400px;
     overflow-y: auto;
+    overflow-x: auto;
     font-family: var(--font-code) !important;
     font-size: 0.9rem !important;
     line-height: 1.5 !important;
@@ -284,13 +285,42 @@ footer {
 }
 
 @media (max-width: 768px) {
+    .container {
+        padding: 0 1rem;
+    }
+    .hero {
+        padding: 4rem 0 2rem;
+    }
     .gradient-text {
-        font-size: 2.5rem;
+        font-size: 2rem;
+    }
+    .subtitle {
+        font-size: 1rem;
+        padding: 0 1rem;
+    }
+    .filter-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
+    }
+    .code-card {
+        padding: 1.25rem;
     }
     .card-header {
         flex-direction: column;
+        gap: 0.5rem;
+    }
+    .card-title {
+        font-size: 1.25rem;
     }
     .complexity-badge {
-        margin-top: 0.5rem;
+        margin-top: 0.25rem;
+    }
+    pre {
+        padding: 1rem !important;
+        font-size: 0.8rem !important;
+    }
+    .blob-1, .blob-2, .blob-3 {
+        width: 300px;
+        height: 300px;
     }
 }
