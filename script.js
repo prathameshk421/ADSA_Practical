@@ -22,10 +22,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const cleanCode = item.code.replace(/</g, "&lt;").replace(/>/g, "&gt;");
 
+            // Dynamic color highlighting for complexity
+            function getComplexityColor(complexityStr) {
+                const text = complexityStr.toLowerCase();
+                if (text.includes('o(1)') || text.includes('o(log n)') || text.includes('o(h)')) {
+                    return '#34d399'; // Emerald / Green
+                } else if (text.includes('v + e') || text.includes('n + m')) {
+                    return '#60a5fa'; // Blue
+                } else if (text.includes('e log v') || text.includes('e log e')) {
+                    return '#fbbf24'; // Amber / Yellow
+                } else if (text.includes('n^2') || text.includes('v^2')) {
+                    return '#f87171'; // Red
+                }
+                return '#a78bfa'; // Purple (Fallback)
+            }
+            
+            const badgeColor = getComplexityColor(item.complexity);
+
             card.innerHTML = `
                 <div class="card-header">
                     <h2 class="card-title">${item.title}</h2>
-                    <div class="complexity-badge">
+                    <div class="complexity-badge" style="color: ${badgeColor}; background: ${badgeColor}1a; border-color: ${badgeColor}33;">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px;"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
                         ${item.complexity}
                     </div>
